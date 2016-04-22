@@ -1,5 +1,47 @@
-{% ckan_extends %}
+<div role="main" class="hero">
+      
+   <div class="wrapperhp">
+   <div class="container">
+      <div class="row row1">
+      <div class="span6 col1">
+        {% block promoted %}
+          {% snippet 'home/snippets/promoted.html' %}
+        {% endblock %}
+      </div>
+          <aside>  
+      <div class="span6 col2">
+        {% block search %}
+          {% snippet 'home/snippets/search.html' %}
+        {% endblock %}
+        </div>  
+      </aside>
+  </div> 
+</div>
 
-{% block featured_group %}
-  {{ h.recently_changed_packages_activity_stream(limit=4) }}
-{% endblock %}
+<div class="container">
+      <div class="row row2">
+      {% block featured_group %}
+          {% snippet 'home/snippets/featured_group.html' %}
+        {% endblock %}
+    </div>
+</div>
+  
+    
+<div class="container">
+  <div class="row row3">
+          <div class="span6 col1">
+		<div class="spansboxbot">
+    <h1>Vraag een dataset aan</h1>
+</div>
+</div>
+<div class="span6 col2">
+<div class="spansboxbot">
+    <h1>Geo data</h1>
+</div>
+</div>
+          
+ </div>
+     </div>
+  </div>
+
+
