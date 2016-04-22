@@ -1,35 +1,48 @@
-<div role="main" class="hero">
+<div role="main" class="hero inner">
+    <div class="container">
+      <div class="row row1">
+        <div class="span6 col1">
+          <div class="module-content">
+            <h1 class="hero-text-heading hero-text">Your source for open data in the Philadelphia region</h1>
+            <p class="hero-text-description hero-text">OpenDataPhilly is a catalog of open data in the Philadelphia region. In addition to being the official open data repository for the City, it includes data sets from many organizations in the region.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div role="main" class="main-search">
   <div class="container">
     <div class="row row1">
       <div class="span6 col1">
-        {% block search %}
-          {% snippet 'home/snippets/search.html' %}
-        {% endblock %}
-        {% block stats %}
-          {% snippet 'home/snippets/stats.html' %}
-        {% endblock %}
+        {% snippet 'home/snippets/search.html' %}
       </div>
-      <div class="span6 col2">
-        {% block promoted %}
-          {% snippet 'home/snippets/promoted.html' %}
-        {% endblock %}
+      <div class="span4 offset1 col1">
+        <div class="module-content box getstarted">
+          <p>
+            Get started by searching from
+            <b>{{ h.odp_theme_dataset_count() }}</b>
+            datasets that cover all dimensions of Philadelphia,
+            from city council districts to park locations.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div role="main">
+<div role="main" class="main-updates">
   <div class="container">
     <div class="row row2">
-      <div class="span6 col2">
-        {% block featured_organization %}
-          {% snippet 'home/snippets/featured_organization.html' %}
-        {% endblock %}
-      </div>
       <div class="span6 col1">
-        {% block featured_group %}
-          {% snippet 'home/snippets/featured_group.html' %}
-        {% endblock %}
+        {% snippet 'home/snippets/latest_datasets.html' %}
+      </div>
+      <div class="span6 col2">
+        <div class="module-content box">
+          <h2 class="secondary-heading">Tweets</h2>
+          <a class="twitter-timeline"  height="420" data-chrome="nofooter noscrollbar  noheader transparent" href="https://twitter.com/opendataphilly" data-widget-id="547080711753449472">Tweets by @opendataphilly</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
       </div>
     </div>
   </div>
-</div>
