@@ -101,3 +101,15 @@ body {
 .site-footer a {
   color: rgba(255, 255, 255, 0.6);
 }
+
+/* ========================================================================
+   Body Style
+   ======================================================================== */
+a
+
+@media (min-width: 768px) {
+  .hero {
+  background: url("/img/OCT_banner.jpg") no-repeat center;
+  background-size: cover;
+}
+}
