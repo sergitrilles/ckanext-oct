@@ -282,7 +282,7 @@ label {
 
 .browse-topic {
   text-align: center;
-  width: 210px;
+  width: 215px;
   margin-bottom: 20px;
   margin-right: 5px;
   display: inline-block;
@@ -309,8 +309,7 @@ label {
   margin-bottom: 12px; }
 
 .main-browse {
-  background-color: #fff;
-  height: 80px;	}
+  background-color: #fff; }
 
 .main-featured {
   background-color: #6e7a81; }
@@ -323,7 +322,6 @@ label {
     border: 0; }
 
 .main-search {
-  height: 80px;
   padding-top: 34px !important; }
 
 .dataset-heading a {
