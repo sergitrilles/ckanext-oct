@@ -43,6 +43,9 @@ def groups():
 
 class OctPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
+	plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IFacets)
+    plugins.implements(plugins.IRoutes)
 
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
