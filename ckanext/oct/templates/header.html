@@ -85,8 +85,10 @@
 
 	<div class="content">
 
+	<div class="nav-collapse collapse">
+
       {% block header_site_navigation %}
-        <div class="nav-collapse collapse">
+        <nav class="section navigation">
           <ul class="nav nav-pills">
             {% block header_site_navigation_tabs %}
               {{ h.build_nav_main(
