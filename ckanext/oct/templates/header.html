@@ -1,5 +1,4 @@
 {% block header_wrapper %}
-
 {% block header_account %}
   <header class="account-masthead">
     <div class="container">
@@ -82,10 +81,8 @@
           {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
         {% endif %}
       {% endblock %}
-
-
-
-
+	  
+	   <div class="content">
 
       {% block header_site_navigation %}
         <nav class="section navigation">
@@ -112,7 +109,11 @@
         </form>
       {% endblock %}
 
+    </div>
+
     </hgroup>
+
+   
   </div>
 </header>
 {% endblock %}
