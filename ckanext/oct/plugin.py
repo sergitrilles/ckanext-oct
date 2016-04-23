@@ -2,22 +2,26 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import pylons
 
-def most_recent_datasets(num=3):
-    """Return a list of recent datasets."""
+##def most_recent_datasets(num=3):
+##    """Return a list of recent datasets."""
+##
+##    # the current_package_list_with_resources action returns private resources
+##    # which need to be filtered
+##
+##    datasets = []
+##    i = 0
+##    while len(datasets) < num:
+##        datasets += filter(lambda ds: not ds['private'],
+##                           toolkit.get_action('current_package_list_with_resources')({},
+##                                         {'limit': num, 'offset': i * num}))
+##        i += 1
+##
+##    return datasets[:num]
 
-    # the current_package_list_with_resources action returns private resources
-    # which need to be filtered
-
-    datasets = []
-    i = 0
-    while len(datasets) < num:
-        datasets += filter(lambda ds: not ds['private'],
-                           toolkit.get_action('current_package_list_with_resources')({},
-                                         {'limit': num, 'offset': i * num}))
-        i += 1
-
-    return datasets[:num]
-
+def most_recent_datasets(limit=3):
+    datasets = toolkit.get_action('package_search')(
+        data_dict={'sort': 'metadata_modified desc', 'rows':limit})
+    return datasets.get('results')
 
 def apps(featured_only=True):
     """Return apps for all datasets."""
@@ -54,4 +58,5 @@ class OctPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         """Register odp_theme_* helper functions"""
 
-        return {'oct_dataset_count': dataset_count}
+        return {'oct_most_recent_datasets': most_recent_datasets,
+                'oct_dataset_count': dataset_count}
