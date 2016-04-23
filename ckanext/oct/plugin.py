@@ -60,4 +60,5 @@ class OctPlugin(plugins.SingletonPlugin):
 
         return {'oct_most_recent_datasets': most_recent_datasets,
                 'oct_dataset_count': dataset_count,
-		'oct_groups': groups}
+		'oct_groups': groups,
+                'oct_apps': apps}
