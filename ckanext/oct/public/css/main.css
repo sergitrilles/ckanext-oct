@@ -309,7 +309,8 @@ label {
   margin-bottom: 12px; }
 
 .main-browse {
-  background-color: #fff; }
+  background-color: #fff;
+  height: 80px;	}
 
 .main-featured {
   background-color: #6e7a81; }
