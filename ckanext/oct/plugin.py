@@ -1,8 +1,6 @@
-from collections import OrderedDict
+import ckan.plugins as plugins
+import ckan.plugins.toolkit as toolkit
 
-import pylons
-
-from jinja2 import Undefined
 
 from ckan.lib.activity_streams import \
     activity_stream_string_functions as activity_streams
@@ -17,7 +15,7 @@ def most_recent_datasets(num=3):
     i = 0
     while len(datasets) < num:
         datasets += filter(lambda ds: not ds['private'],
-                           tk.get_action('current_package_list_with_resources')({},
+                           toolkit.get_action('current_package_list_with_resources')({},
                                          {'limit': num, 'offset': i * num}))
         i += 1
 
@@ -27,7 +25,7 @@ def most_recent_datasets(num=3):
 def apps(featured_only=True):
     """Return apps for all datasets."""
 
-    apps = tk.get_action('related_list')({}, {'type_filter': 'application',
+    apps = toolkit.get_action('related_list')({}, {'type_filter': 'application',
                                               'featured': featured_only})
 
     return apps
@@ -36,36 +34,35 @@ def apps(featured_only=True):
 def dataset_count():
     """Return a count of all datasets"""
 
-    result = tk.get_action('package_search')({}, {'rows': 1})
+    result = toolkit.get_action('package_search')({}, {'rows': 1})
     return result['count']
 
 
 def groups():
     """Return a list of groups"""
 
-    return tk.get_action('group_list')({}, {'all_fields': True})
+    return toolkit.get_action('group_list')({}, {'all_fields': True})
 
 
 
 
 # monkeypatch activity streams
 activity_streams['changed group'] = (
-    lambda c, a: tk._("{actor} updated the topic {group}")
+    lambda c, a: toolkit._("{actor} updated the topic {group}")
 )
 
 activity_streams['deleted group'] = (
-    lambda c, a: tk._("{actor} deleted the topic {group}")
+    lambda c, a: toolkit._("{actor} deleted the topic {group}")
 )
 
 activity_streams['new group'] = (
-    lambda c, a: tk._("{actor} created the topic {group}")
+    lambda c, a: toolkit._("{actor} created the topic {group}")
 )
 
 
 
 #init
-import ckan.plugins as plugins
-import ckan.plugins.toolkit as toolkit
+
 
 
 class OctPlugin(plugins.SingletonPlugin):
