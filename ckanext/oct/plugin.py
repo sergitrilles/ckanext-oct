@@ -43,7 +43,7 @@ def groups():
 
 class OctPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
-	plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IRoutes)
 
