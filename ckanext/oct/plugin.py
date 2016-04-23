@@ -55,6 +55,4 @@ class OctPlugin(plugins.SingletonPlugin):
         """Register odp_theme_* helper functions"""
 
         return {'oct_most_recent_datasets': most_recent_datasets,
-                'oct_dataset_count': dataset_count,
-                'oct_groups': groups,
-                'oct_apps': apps}
+                'oct_dataset_count': dataset_count}
