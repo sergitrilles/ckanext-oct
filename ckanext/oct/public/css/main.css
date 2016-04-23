@@ -323,6 +323,7 @@ label {
     border: 0; }
 
 .main-search {
+  height: 80px;
   padding-top: 34px !important; }
 
 .dataset-heading a {
