@@ -1,9 +1,6 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-
-
-from ckan.lib.activity_streams import \
-    activity_stream_string_functions as activity_streams
+import pylons
 
 def most_recent_datasets(num=3):
     """Return a list of recent datasets."""
@@ -44,33 +41,8 @@ def groups():
     return toolkit.get_action('group_list')({}, {'all_fields': True})
 
 
-
-
-# monkeypatch activity streams
-activity_streams['changed group'] = (
-    lambda c, a: toolkit._("{actor} updated the topic {group}")
-)
-
-activity_streams['deleted group'] = (
-    lambda c, a: toolkit._("{actor} deleted the topic {group}")
-)
-
-activity_streams['new group'] = (
-    lambda c, a: toolkit._("{actor} created the topic {group}")
-)
-
-
-
-#init
-
-
-
 class OctPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
-	
-	plugins.implements(plugins.ITemplateHelpers)
-    plugins.implements(plugins.IFacets)
-    plugins.implements(plugins.IRoutes)
 
     # IConfigurer
 
@@ -79,7 +51,7 @@ class OctPlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'oct')
 		
-	def get_helpers(self):
+    def get_helpers(self):
         """Register odp_theme_* helper functions"""
 
         return {'oct_most_recent_datasets': most_recent_datasets,
