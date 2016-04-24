@@ -420,8 +420,13 @@ body {
     padding: 10px 25px;
 }
 
-.module-content box getstarted{
-	    font-size: 18px;
+.site-footer {
+    *
+    zoom: 1;
+    min-height: 55px;
+    color: #ffffff;
+    background: #005d7a url("../../../base/images/bg.png");
+    padding: 20px 20px;
 }
 
 .inner {
