@@ -416,6 +416,11 @@ body {
     padding-right: 0px;
 }
 
+.site-footer {
+    padding: 0 25px;
+    margin: 20px 0
+}
+
 .inner {
   position: absolute;
   height: 100px;
