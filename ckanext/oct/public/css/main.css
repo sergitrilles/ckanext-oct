@@ -420,6 +420,10 @@ body {
     padding: 10px 25px;
 }
 
+.module-content box getstarted{
+	    font-size: 18px;
+}
+
 .inner {
   position: absolute;
   height: 100px;
