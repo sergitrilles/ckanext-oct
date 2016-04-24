@@ -388,6 +388,11 @@ label {
   width: 100%;
   height: 420px;
   margin-top: 16px; }
+@media (min-width: 768px) {
+    .outer {
+        height: 640px;
+    }
+}
 
 .inner {
   position: absolute;
