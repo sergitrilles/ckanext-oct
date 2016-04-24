@@ -409,6 +409,12 @@ label {
     }
 }
 
+@media (max-width: 767px)
+body {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .inner {
   position: absolute;
   height: 100px;
