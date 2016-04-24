@@ -391,8 +391,14 @@ label {
   
 @media (max-width: 768px) {
     .outer {
-        height: 640px;
+        height: 620px;
     }
+}
+
+@media (max-width: 768px)
+[role=main], .main {
+    padding-top: 10px;
+    background: #eeeeee url("../../../base/images/bg.png");
 }
 
 .inner {
