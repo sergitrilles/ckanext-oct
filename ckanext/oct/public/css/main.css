@@ -409,6 +409,7 @@ label {
     }
 }
 
+
 @media (max-width: 767px)
 body {
     padding-left: 0px;
@@ -435,7 +436,7 @@ body {
     background-color: #eee; }
 
 .site-footer ul {
-  padding: 20px;
+  padding: 0;
   list-style: none; }
 
 .module-content-about img {
