@@ -93,7 +93,7 @@
 
     </hgroup>
 
-    <div class="nav-collapse collapse">
+    <div class="content">
 
       {% block header_site_navigation %}
         <nav class="section navigation">
@@ -109,6 +109,7 @@
           </ul>
         </nav>
       {% endblock %}
+	  
 
       {% block header_site_search %}
         <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
