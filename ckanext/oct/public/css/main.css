@@ -395,10 +395,18 @@ label {
     }
 }
 
-@media (max-width: 768px)
-[role=main], .main {
-    padding-top: 10px;
-    background: #eeeeee url("../../../base/images/bg.png");
+@media (max-width: 768px) {
+    .main-search {
+        padding-top: 10px;
+        background: #eeeeee url("../../../base/images/bg.png")
+    }
+}
+
+@media (max-width: 768px) {
+    .main-updates {
+        padding-top: 10px;
+        background: #eeeeee url("../../../base/images/bg.png")
+    }
 }
 
 .inner {
