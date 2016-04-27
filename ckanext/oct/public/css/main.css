@@ -35,7 +35,11 @@
 @media (max-width: 768px) {
     .carousel {
         display:none;}
+	.carousel-controls{
+        display:none;}
 }
+
+
 
 .carousel {
   line-height: inherit; }
