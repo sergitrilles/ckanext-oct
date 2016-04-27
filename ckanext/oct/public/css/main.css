@@ -30,6 +30,12 @@
     opacity: .6; }
   .carousel-control > img {
     height: 16px; }
+	
+	
+@media (max-width: 768px) {
+    .carousel {
+        display:none;}
+}
 
 .carousel {
   line-height: inherit; }
@@ -389,11 +395,11 @@ label {
   height: 420px;
   margin-top: 16px; }
   
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .outer {
         height: 620px;
     }
-}
+}*/
 
 @media (max-width: 768px) {
     .main-search {
